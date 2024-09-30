@@ -1,0 +1,41 @@
+<h1 class = "container pb-2 text-center  py-5">Mostrando todos las Series ingresadas <%= @series.count %>   </h1>
+
+
+ <div class="container  ">
+    <div class="row align-items-start text-center">
+            <div class="col border rounded-4 bg-info">
+            <h4>Name</h4>
+        </div>
+        <div class="col border rounded-4 bg-info">
+          <h4>Synopsis</h4>
+        </div>
+        <div class="col border rounded-4 bg-info">
+          <h4> Director</h4>
+        </div>
+    </div>
+
+
+    <% @series.each do |m| %>
+        <div class="container text-left">
+          <div class="row align-items-start  ">
+            <div class="col border rounded-4  border-danger" >
+              <%= m.name %>
+            </div>
+            <div class="col border rounded-4  border-danger">
+            
+              <%= m.synopsis %>
+            </div>
+            <div class="col border rounded-4  border-danger">
+            
+              <%= m.director %> 
+            </div>
+          </div>
+        </div>
+    <% end%>
+</div>
+
+
+ 
+ <div class = "container text-center  mt-5">
+    <%= link_to "Agregar nueva Series", series_new_path,  class: "btn btn-success"%>
+ </div>
